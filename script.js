@@ -1,56 +1,9 @@
 window.addEventListener('load', () => {
-    buildEngGrid();
     setTimeout(() => {
         document.getElementById('loader').classList.add('hidden');
         initHeroReveal();
     }, 2000);
 });
-
-function buildEngGrid() {
-    const wrap = document.getElementById('engGridWrap');
-    if (!wrap) return;
-    const s = (x1,y1,x2,y2,sw,o) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(255,255,255,${o})" stroke-width="${sw}"/>`;
-    const sr = (x1,y1,x2,y2,sw,o) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(200,164,92,${o})" stroke-width="${sw}"/>`;
-    const c = (cx,cy,r,fill,o) => `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" opacity="${o}"/>`;
-    const nc = (cx,cy,r,sw,o) => `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(200,164,92,${o})" stroke-width="${sw}"/>`;
-    const n4 = (pts,sw,o,d) => `<polygon points="${pts}" fill="none" stroke="rgba(200,164,92,${o})" stroke-width="${sw}"${d?' stroke-dasharray="'+d+'"':''}/>`;
-    const rect = (x,y,w,h,sw,o,t) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="rgba(255,255,255,${o})" stroke-width="${sw}"${t?' transform="'+t+'"':''}/>`;
-
-    let svg = `<svg class="eng-grid-svg" viewBox="0 0 400 400" width="400" height="400">
-        <defs><radialGradient id="gFade" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="rgba(200,164,92,.06)"/>
-        <stop offset="100%" stop-color="transparent"/></radialGradient></defs>
-        <circle cx="200" cy="200" r="195" fill="url(#gFade)"/>`;
-
-    svg += s(200,5,200,395,.5,.06) + s(5,200,395,200,.5,.06);
-    svg += s(30,30,370,370,.4,.035) + s(370,30,30,370,.4,.035);
-
-    svg += rect(100,100,200,200,.5,.07);
-    svg += rect(70,70,260,260,.4,.045,0,0,'rotate(45 200 200)');
-    svg += rect(140,140,120,120,.4,.055);
-
-    svg += nc(200,200,55,.6,.2) + nc(200,200,100,.5,.12) + nc(200,200,150,.5,.08);
-
-    svg += sr(200,55,200,100,.5,.18) + sr(295,82,265,135,.5,.18);
-    svg += sr(345,200,300,200,.5,.18) + sr(295,318,265,265,.5,.18);
-    svg += sr(200,345,200,300,.5,.18) + sr(105,318,135,265,.5,.18);
-    svg += sr(55,200,100,200,.5,.18) + sr(105,82,135,135,.5,.18);
-
-    svg += n4('200,55 295,82 345,200 295,318 200,345 105,318 55,200 105,82',.6,.16);
-    svg += n4('200,100 265,135 300,200 265,265 200,300 135,265 100,200 135,135',.5,.11,'5 3');
-
-    const tips = [[200,55],[295,82],[345,200],[295,318],[200,345],[105,318],[55,200],[105,82]];
-    tips.forEach(([x,y]) => svg += c(x,y,3.5,'#c8a45c',.65));
-
-    const inner = [[100,100],[300,100],[300,300],[100,300]];
-    inner.forEach(([x,y]) => svg += c(x,y,2.5,'rgba(255,255,255,.3)',1));
-
-    svg += c(200,200,5,'#c8a45c',1);
-    svg += nc(200,200,14,.8,.4);
-
-    svg += '</svg>';
-    wrap.innerHTML = svg;
-}
 
 function initHeroReveal() {
     const kicker = document.querySelector('.hero-content .section-kicker');
@@ -259,12 +212,8 @@ document.querySelectorAll('.work-card').forEach(card => {
 
 window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero-content');
-    const geo = document.querySelector('.abstract-geo');
-    const web = document.getElementById('engGridWrap');
     const s = window.scrollY;
     if (hero && s < window.innerHeight) { hero.style.transform = 'translateY(' + (s * .15) + 'px)'; hero.style.opacity = 1 - (s / window.innerHeight); }
-    if (geo && s < window.innerHeight) geo.style.transform = 'translateY(' + (s * .08) + 'px)';
-    if (web && s < window.innerHeight) web.style.transform = 'rotate(' + (s * 0.15) + 'deg)';
 });
 
 document.querySelectorAll('[data-tilt]').forEach(el => {
@@ -274,6 +223,20 @@ document.querySelectorAll('[data-tilt]').forEach(el => {
         el.style.transform = 'perspective(800px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg) translateY(-5px)';
     });
     el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+});
+
+document.querySelectorAll('.magnetic-btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width / 2;
+        const y = e.clientY - r.top - r.height / 2;
+        btn.style.transform = 'translate(' + (x * .3) + 'px, ' + (y * .3) + 'px)';
+        btn.style.transition = 'transform .2s ease-out';
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0)';
+        btn.style.transition = 'transform .5s cubic-bezier(.23,1,.32,1)';
+    });
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
