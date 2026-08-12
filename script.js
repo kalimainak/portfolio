@@ -39,7 +39,7 @@ function animateCursor() {
 }
 animateCursor();
 
-document.querySelectorAll('a, button, .work-card, .skill-item, .panel, .metric, .magnetic-btn, .geo-core').forEach(el => {
+document.querySelectorAll('a, button, .work-card, .skill-item, .panel, .metric, .magnetic-btn').forEach(el => {
     el.addEventListener('mouseenter', () => { cursorDot.classList.add('hover'); cursorWeb.classList.add('hover'); });
     el.addEventListener('mouseleave', () => { cursorDot.classList.remove('hover'); cursorWeb.classList.remove('hover'); });
 });
@@ -262,17 +262,11 @@ document.querySelectorAll('.work-card').forEach(card => {
 window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero-content');
     const geo = document.querySelector('.abstract-geo');
+    const web = document.getElementById('spiderWebWrap');
     const s = window.scrollY;
     if (hero && s < window.innerHeight) { hero.style.transform = 'translateY(' + (s * .15) + 'px)'; hero.style.opacity = 1 - (s / window.innerHeight); }
-    if (geo && s < window.innerHeight) geo.style.transform = 'translateY(' + (s * .08) + 'px) rotate(' + (s * .02) + 'deg)';
-});
-
-document.querySelectorAll('.geo-ring').forEach((ring, i) => {
-    document.addEventListener('mousemove', (e) => {
-        const x = (e.clientX / window.innerWidth - .5) * 20 * (i + 1) * .4;
-        const y = (e.clientY / window.innerHeight - .5) * 20 * (i + 1) * .4;
-        ring.style.transform = 'translate(' + x + 'px,' + y + 'px)';
-    });
+    if (geo && s < window.innerHeight) geo.style.transform = 'translateY(' + (s * .08) + 'px)';
+    if (web && s < window.innerHeight) web.style.transform = 'rotate(' + (s * 0.15) + 'deg)';
 });
 
 document.querySelectorAll('[data-tilt]').forEach(el => {
