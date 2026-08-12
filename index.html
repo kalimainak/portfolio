@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thogaru Vinay Varma | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-mask">
+            <div class="loader-eye left"></div>
+            <div class="loader-eye right"></div>
+        </div>
+        <span class="loader-text">ENTERING THE SPIDER-VERSE</span>
+        <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+
+    <div class="page-progress"><div class="progress-fill"></div></div>
+    <canvas id="rainCanvas"></canvas>
+    <canvas id="webBgCanvas"></canvas>
+    <div class="grain-overlay"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="web-shoot-effect" id="webShoot"></div>
+
+    <header class="topbar" id="topbar">
+        <a class="brand" href="#home">VV</a>
+        <nav class="desktop-nav">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <aside class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span class="mobile-brand">VV // PORTFOLIO</span>
+            <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-links">
+            <a href="#home"><span>01</span>Home</a>
+            <a href="#about"><span>02</span>About</a>
+            <a href="#skills"><span>03</span>Skills</a>
+            <a href="#projects"><span>04</span>Projects</a>
+            <a href="#experience"><span>05</span>Education</a>
+            <a href="#contact"><span>06</span>Contact</a>
+        </nav>
+        <div class="mobile-status">
+            <span class="status-dot"></span> OPEN TO OPPORTUNITIES
+        </div>
+    </aside>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <main>
+        <section id="home" class="hero section dark">
+            <canvas id="heroCanvas" class="hero-canvas"></canvas>
+            <div class="hero-grid-bg"></div>
+            <div class="city-skyline city-back"></div>
+            <div class="city-skyline city-front"></div>
+            
+            <div class="hero-content">
+                <div class="spider-sense" id="spiderSense">
+                    <svg viewBox="0 0 100 100" class="sense-svg">
+                        <path d="M50 10 L55 45 L90 50 L55 55 L50 90 L45 55 L10 50 L45 45 Z" fill="none" stroke="#ef233c" stroke-width="1"/>
+                        <circle cx="50" cy="50" r="3" fill="#ef233c"/>
+                    </svg>
+                </div>
+                <p class="section-kicker">INTERIOR DESIGN &bull; 3D VISUALIZATION &bull; CIVIL ENGINEERING</p>
+                <h1 class="hero-title">
+                    <span class="hero-first" data-text="Vinay">Vinay</span>
+                    <span class="hero-last" data-text="Varma">Varma</span>
+                </h1>
+                <p class="hero-lead">I create functional, modern interiors and architectural visualizations that turn spaces into refined living experiences.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary magnetic-btn">
+                        <span>View My Work</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-ghost magnetic-btn">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+                <div class="hero-meta">
+                    <span class="meta-item">INTERIOR DESIGN</span>
+                    <span class="meta-divider"></span>
+                    <span class="meta-item">AUTOCAD / SKETCHUP</span>
+                    <span class="meta-divider"></span>
+                    <span class="meta-item">HYDERABAD, INDIA</span>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="abstract-geo">
+                    <div class="geo-ring ring-1"></div>
+                    <div class="geo-ring ring-2"></div>
+                    <div class="geo-ring ring-3"></div>
+                    <div class="geo-core">
+                        <span class="core-initials">VV</span>
+                        <div class="core-pulse"></div>
+                    </div>
+                    <div class="geo-line line-1"></div>
+                    <div class="geo-line line-2"></div>
+                    <div class="geo-line line-3"></div>
+                    <div class="geo-line line-4"></div>
+                    <div class="geo-dot dot-1"></div>
+                    <div class="geo-dot dot-2"></div>
+                    <div class="geo-dot dot-3"></div>
+                    <div class="geo-dot dot-4"></div>
+                    <div class="web-strand strand-1"></div>
+                    <div class="web-strand strand-2"></div>
+                    <div class="web-strand strand-3"></div>
+                </div>
+            </div>
+            
+            <div class="scroll-cue">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="scroll-line"></div>
+            </div>
+            <div class="spiderman-hang" id="spidermanHang">
+                <svg class="spiderman-svg" viewBox="0 0 200 450" width="140" height="320">
+                    <!-- Web thread -->
+                    <line x1="100" y1="0" x2="100" y2="180" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+                    <!-- Feet on web -->
+                    <ellipse cx="85" cy="175" rx="18" ry="8" fill="#e23636" transform="rotate(-15 85 175)"/>
+                    <ellipse cx="115" cy="175" rx="18" ry="8" fill="#e23636" transform="rotate(15 115 175)"/>
+                    <!-- Legs bent up -->
+                    <path d="M85 175 Q70 210 75 250" stroke="#111" stroke-width="22" fill="none" stroke-linecap="round"/>
+                    <path d="M115 175 Q130 210 125 250" stroke="#111" stroke-width="22" fill="none" stroke-linecap="round"/>
+                    <!-- Red shin guards -->
+                    <path d="M78 220 Q72 235 75 250" stroke="#e23636" stroke-width="16" fill="none" stroke-linecap="round"/>
+                    <path d="M122 220 Q128 235 125 250" stroke="#e23636" stroke-width="16" fill="none" stroke-linecap="round"/>
+                    <!-- Hips -->
+                    <ellipse cx="100" cy="255" rx="30" ry="15" fill="#111"/>
+                    <!-- Torso -->
+                    <path d="M75 255 Q70 300 75 340 L125 340 Q130 300 125 255" fill="#e23636"/>
+                    <!-- Spider pattern on torso -->
+                    <line x1="100" y1="260" x2="100" y2="335" stroke="#111" stroke-width="1.5" opacity=".4"/>
+                    <line x1="80" y1="280" x2="100" y2="290" stroke="#111" stroke-width="1" opacity=".3"/>
+                    <line x1="120" y1="280" x2="100" y2="290" stroke="#111" stroke-width="1" opacity=".3"/>
+                    <line x1="78" y1="300" x2="100" y2="305" stroke="#111" stroke-width="1" opacity=".3"/>
+                    <line x1="122" y1="300" x2="100" y2="305" stroke="#111" stroke-width="1" opacity=".3"/>
+                    <!-- Spider emblem -->
+                    <circle cx="100" cy="295" r="5" fill="#111"/>
+                    <!-- Arms reaching down -->
+                    <path d="M78 270 Q55 310 50 355" stroke="#111" stroke-width="18" fill="none" stroke-linecap="round"/>
+                    <path d="M122 270 Q145 310 150 355" stroke="#111" stroke-width="18" fill="none" stroke-linecap="round"/>
+                    <!-- Red gloves -->
+                    <path d="M57 335 Q50 350 48 365" stroke="#e23636" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path d="M143 335 Q150 350 152 365" stroke="#e23636" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <!-- Head (upside down) -->
+                    <ellipse cx="100" cy="370" rx="32" ry="38" fill="#e23636"/>
+                    <!-- Mask pattern -->
+                    <path d="M100 338 Q100 350 100 360" stroke="#111" stroke-width="1" opacity=".3"/>
+                    <path d="M75 355 Q100 365 125 355" stroke="#111" stroke-width="1" opacity=".3"/>
+                    <path d="M72 370 Q100 385 128 370" stroke="#111" stroke-width="1" opacity=".3"/>
+                    <!-- Eyes -->
+                    <ellipse cx="86" cy="365" rx="14" ry="10" fill="#fff" stroke="#111" stroke-width="2.5" transform="rotate(-5 86 365)"/>
+                    <ellipse cx="114" cy="365" rx="14" ry="10" fill="#fff" stroke="#111" stroke-width="2.5" transform="rotate(5 114 365)"/>
+                    <!-- Eye highlights -->
+                    <ellipse cx="83" cy="363" rx="4" ry="3" fill="rgba(255,255,255,.6)"/>
+                    <ellipse cx="111" cy="363" rx="4" ry="3" fill="rgba(255,255,255,.6)"/>
+                    <!-- Hands together pose -->
+                    <ellipse cx="100" cy="400" rx="20" ry="12" fill="#e23636"/>
+                    <ellipse cx="100" cy="400" rx="16" ry="8" fill="#1a1a1a" opacity=".2"/>
+                </svg>
+            </div>
+        </section>
+
+        <section id="about" class="section light">
+            <div class="section-bg-web about-web"></div>
+            <div class="web-corner corner-tl"></div>
+            <div class="web-corner corner-br"></div>
+            <div class="floating-spider spider-1"><svg viewBox="0 0 60 60" width="45"><circle cx="30" cy="25" r="10" fill="#111"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1.2"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1.2"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1.2"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1.2"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1.2"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1.2"/></svg></div>
+            <div class="floating-spider spider-2"><svg viewBox="0 0 60 60" width="32"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".45"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".45"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1.2" opacity=".45"/></svg></div>
+            <div class="floating-spider spider-2b"><svg viewBox="0 0 60 60" width="24"><circle cx="30" cy="25" r="10" fill="#111" opacity=".35"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".35"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".35"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".35"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".35"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".35"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".35"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".35"/></svg></div>
+            <div class="section-web-line"></div>
+            <div class="section-label">01 / ABOUT ME</div>
+            <div class="split-layout">
+                <div class="split-left">
+                    <p class="section-kicker">DESIGNER PROFILE</p>
+                    <h2>Designing with<br><span>purpose.</span></h2>
+                </div>
+                <div class="split-right">
+                    <p class="lead-text">I am a Civil Engineering student at NIT Andhra Pradesh with a strong interest in interior design, architectural drafting and photorealistic visualization.</p>
+                    <p>I work with AutoCAD, AutoCAD 3D, SketchUp and D5 Render to develop practical layouts, modern interiors and clear visual presentations.</p>
+                    <div class="metrics">
+                        <article class="metric" data-tilt>
+                            <strong data-count="12">0</strong>
+                            <span>Design Works</span>
+                            <div class="metric-bar"></div>
+                        </article>
+                        <article class="metric" data-tilt>
+                            <strong data-count="6">0</strong>
+                            <span>Design Skills</span>
+                            <div class="metric-bar"></div>
+                        </article>
+                        <article class="metric" data-tilt>
+                            <strong data-count="4">0</strong>
+                            <span>Tools</span>
+                            <div class="metric-bar"></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-block">
+                <span class="quote-mark">"</span>
+                GOOD DESIGN TURNS SPACE INTO EXPERIENCE
+                <span class="quote-mark">"</span>
+            </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 200 30" width="200" height="30"><line x1="0" y1="15" x2="85" y2="15" stroke="#ef233c" stroke-width="1" opacity=".3"/><circle cx="100" cy="15" r="4" fill="#ef233c" opacity=".5"/><line x1="115" y1="15" x2="200" y2="15" stroke="#ef233c" stroke-width="1" opacity=".3"/></svg>
+            </div>
+        </section>
+
+        <section id="skills" class="section dark">
+            <div class="section-bg-web skills-web"></div>
+            <div class="web-corner corner-tl"></div>
+            <div class="web-corner corner-br"></div>
+            <div class="floating-spider spider-3"><svg viewBox="0 0 60 60" width="38"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".5"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".5"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1.2" opacity=".5"/></svg></div>
+            <div class="floating-spider spider-3b"><svg viewBox="0 0 60 60" width="26"><circle cx="30" cy="25" r="10" fill="#111" opacity=".4"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".4"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".4"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".4"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".4"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".4"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".4"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".4"/></svg></div>
+            <div class="section-label">02 / DESIGN SKILLS</div>
+            <div class="section-head">
+                <div>
+                    <p class="section-kicker">TOOLS & CAPABILITIES</p>
+                    <h2>From plan to<br><span>visualization.</span></h2>
+                </div>
+                <p>Technical tools and design capabilities used across drafting, modeling and presentation.</p>
+            </div>
+            <div class="skill-grid">
+                <article class="skill-item" data-tilt>
+                    <div class="skill-number">01</div>
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 60 60"><polygon points="30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5" fill="none" stroke="#ef233c" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" fill="#ef233c" font-size="16" font-family="Bangers">A</text></svg>
+                    </div>
+                    <h3>AutoCAD</h3>
+                    <p>Accurate 2D plans, layouts, elevations and technical drafting.</p>
+                    <div class="skill-meter"><div class="skill-fill" data-width="90"></div></div>
+                </article>
+                <article class="skill-item" data-tilt>
+                    <div class="skill-number">02</div>
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 60 60"><polygon points="30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5" fill="none" stroke="#ef233c" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" fill="#ef233c" font-size="14" font-family="Bangers">3D</text></svg>
+                    </div>
+                    <h3>AutoCAD 3D</h3>
+                    <p>3D architectural modeling and spatial development.</p>
+                    <div class="skill-meter"><div class="skill-fill" data-width="85"></div></div>
+                </article>
+                <article class="skill-item" data-tilt>
+                    <div class="skill-number">03</div>
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 60 60"><polygon points="30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5" fill="none" stroke="#ef233c" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" fill="#ef233c" font-size="16" font-family="Bangers">S</text></svg>
+                    </div>
+                    <h3>SketchUp</h3>
+                    <p>Fast 3D modeling for interior and architectural concepts.</p>
+                    <div class="skill-meter"><div class="skill-fill" data-width="88"></div></div>
+                </article>
+                <article class="skill-item" data-tilt>
+                    <div class="skill-number">04</div>
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 60 60"><polygon points="30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5" fill="none" stroke="#ef233c" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" fill="#ef233c" font-size="14" font-family="Bangers">D5</text></svg>
+                    </div>
+                    <h3>D5 Render</h3>
+                    <p>Photorealistic rendering, lighting and visualization.</p>
+                    <div class="skill-meter"><div class="skill-fill" data-width="82"></div></div>
+                </article>
+                <article class="skill-item" data-tilt>
+                    <div class="skill-number">05</div>
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 60 60"><polygon points="30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5" fill="none" stroke="#ef233c" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" fill="#ef233c" font-size="14" font-family="Bangers">IP</text></svg>
+                    </div>
+                    <h3>Interior Planning</h3>
+                    <p>Bedroom, living room, kitchen and residential space planning.</p>
+                    <div class="skill-meter"><div class="skill-fill" data-width="92"></div></div>
+                </article>
+                <article class="skill-item" data-tilt>
+                    <div class="skill-number">06</div>
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 60 60"><polygon points="30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5" fill="none" stroke="#ef233c" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" fill="#ef233c" font-size="14" font-family="Bangers">CF</text></svg>
+                    </div>
+                    <h3>Civil Fundamentals</h3>
+                    <p>Construction, surveying, materials and engineering fundamentals.</p>
+                    <div class="skill-meter"><div class="skill-fill" data-width="78"></div></div>
+                </article>
+            </div>
+            <div class="section-divider divider-dark">
+                <svg viewBox="0 0 200 30" width="200" height="30"><line x1="0" y1="15" x2="85" y2="15" stroke="#ef233c" stroke-width="1" opacity=".4"/><circle cx="100" cy="15" r="4" fill="#ef233c" opacity=".6"/><line x1="115" y1="15" x2="200" y2="15" stroke="#ef233c" stroke-width="1" opacity=".4"/></svg>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="section-bg-web projects-web"></div>
+            <div class="web-corner corner-tl"></div>
+            <div class="web-corner corner-br"></div>
+            <div class="floating-spider spider-4"><svg viewBox="0 0 60 60" width="40"><circle cx="30" cy="25" r="10" fill="#111" opacity=".2"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".2"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".2"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".2"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".2"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".2"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".2"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".2"/></svg></div>
+            <div class="floating-spider spider-4b"><svg viewBox="0 0 60 60" width="28"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".25"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".25"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1" opacity=".25"/></svg></div>
+            <div class="section-label">03 / SELECTED WORK</div>
+            <div class="section-head">
+                <div>
+                    <p class="section-kicker">INTERIOR & ARCHITECTURAL PORTFOLIO</p>
+                    <h2>Spaces designed<br><span>to feel complete.</span></h2>
+                </div>
+                <p>A collection of residential interiors, visualization work, plans and elevation studies.</p>
+            </div>
+            <div class="work-grid">
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.27 (2).jpeg" alt="Modern Kitchen" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">01</span>
+                        <h3>Modern Kitchen</h3>
+                        <p>Sleek black cabinets with wood accents</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.27 (1).jpeg" alt="Contemporary Bedroom" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">02</span>
+                        <h3>Contemporary Bedroom</h3>
+                        <p>Blue accent wall with pendant lights</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.26.jpeg" alt="Warm Bedroom Interior" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">03</span>
+                        <h3>Warm Bedroom Interior</h3>
+                        <p>Ambient lighting with neutral tones</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.28 (2).jpeg" alt="Living & Dining" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">04</span>
+                        <h3>Living & Dining</h3>
+                        <p>Open plan with marble flooring</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.28 (1).jpeg" alt="Modern Living Room" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">05</span>
+                        <h3>Modern Living Room</h3>
+                        <p>Cozy space with cove lighting</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.27.jpeg" alt="Bedroom Design" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">06</span>
+                        <h3>Bedroom Concept</h3>
+                        <p>Artistic wine-themed decor</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.25.jpeg" alt="Front Elevation" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">07</span>
+                        <h3>Front Elevation</h3>
+                        <p>Modern facade with tree motif</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.26 (1).jpeg" alt="Bathroom Elevations" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">08</span>
+                        <h3>Bathroom Detailing</h3>
+                        <p>Complete elevation drawings</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.26_1.jpeg" alt="Bedroom Plan" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">09</span>
+                        <h3>Bedroom Layout</h3>
+                        <p>14'-0" x 17'-6" floor plan</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+                <figure class="work-card" data-tilt>
+                    <img src="WhatsApp Image 2026-08-11 at 23.27.28.jpeg" alt="Floor Plan" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="card-number">10</span>
+                        <h3>Floor Plan</h3>
+                        <p>30' x 45' residential layout</p>
+                    </div>
+                    <div class="card-web-effect"></div>
+                </figure>
+            </div>
+        </section>
+
+        <div class="section-transition transition-light-to-dark">
+            <svg viewBox="0 0 100 20" preserveAspectRatio="none" width="100%" height="40"><path d="M0,20 L50,0 L100,20" fill="#07070b" opacity=".5"/><line x1="0" y1="10" x2="100" y2="10" stroke="#ef233c" stroke-width=".5" opacity=".3"/></svg>
+        </div>
+
+        <section id="experience" class="section dark experience-section">
+            <div class="section-bg-web experience-web"></div>
+            <div class="web-corner corner-tl"></div>
+            <div class="web-corner corner-br"></div>
+            <div class="floating-spider spider-5"><svg viewBox="0 0 60 60" width="36"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".35"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".35"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1" opacity=".35"/></svg></div>
+            <div class="floating-spider spider-5b"><svg viewBox="0 0 60 60" width="22"><circle cx="30" cy="25" r="10" fill="#111" opacity=".25"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".25"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".25"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".25"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".25"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".25"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".25"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".25"/></svg></div>
+            <div class="section-label">04 / EDUCATION & KNOWLEDGE</div>
+            <div class="section-head">
+                <div>
+                    <p class="section-kicker">CIVIL ENGINEERING FOUNDATION</p>
+                    <h2>Technical<br><span>background.</span></h2>
+                </div>
+                <p>Design interests supported by civil engineering education and practical laboratory exposure.</p>
+            </div>
+            <div class="profile-panels">
+                <article class="panel" data-tilt>
+                    <div class="panel-accent"></div>
+                    <span class="panel-date">2024 — PRESENT</span>
+                    <h3>B.Tech in Civil Engineering</h3>
+                    <p>National Institute of Technology Andhra Pradesh</p>
+                    <strong>Recently completed 2nd Year</strong>
+                </article>
+                <article class="panel" data-tilt>
+                    <div class="panel-accent"></div>
+                    <span class="panel-date">ACADEMIC KNOWLEDGE</span>
+                    <h3>Engineering Fundamentals</h3>
+                    <p>Strength of Materials, Geotechnical Engineering, Transportation Engineering, Hydraulics and Fluid Mechanics.</p>
+                </article>
+                <article class="panel" data-tilt>
+                    <div class="panel-accent"></div>
+                    <span class="panel-date">LAB EXPERIENCE</span>
+                    <h3>Testing & Experiments</h3>
+                    <p>Soil Testing (CBR, Sieve Analysis), Concrete and Bitumen Tests, and Hydraulics Experiments.</p>
+                </article>
+            </div>
+        </section>
+
+        <div class="section-transition transition-dark-to-light">
+            <svg viewBox="0 0 100 20" preserveAspectRatio="none" width="100%" height="40"><path d="M0,20 L50,0 L100,20" fill="#eee9df" opacity=".5"/><line x1="0" y1="10" x2="100" y2="10" stroke="#ef233c" stroke-width=".5" opacity=".3"/></svg>
+        </div>
+
+        <section id="contact" class="section contact-section">
+            <div class="section-bg-web contact-web"></div>
+            <div class="web-corner corner-tl"></div>
+            <div class="web-corner corner-br"></div>
+            <div class="floating-spider spider-6"><svg viewBox="0 0 60 60" width="34"><circle cx="30" cy="25" r="10" fill="#111" opacity=".3"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".3"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".3"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".3"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".3"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".3"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".3"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".3"/></svg></div>
+            <div class="floating-spider spider-6b"><svg viewBox="0 0 60 60" width="20"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".3"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".3"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1" opacity=".3"/></svg></div>
+            <div class="section-label">05 / CONTACT</div>
+            <div class="section-head">
+                <div>
+                    <p class="section-kicker">LET'S CREATE A SPACE</p>
+                    <h2>Let's design<br><span>something.</span></h2>
+                </div>
+                <p>For interior design work, internships, visualization projects or collaborations, get in touch.</p>
+            </div>
+            <div class="contact-layout">
+                <aside class="contact-info-panel">
+                    <div class="online-status"><span class="status-dot"></span> ONLINE</div>
+                    <div class="identity-badge">VV</div>
+                    <h3>Interior Designer & Civil Engineering Student</h3>
+                    <div class="contact-facts">
+                        <article><span>LOCATION</span><strong>Hyderabad, India</strong></article>
+                        <article><span>STATUS</span><strong>Open to Work</strong></article>
+                        <article><span>FOCUS</span><strong>Interiors / CAD / 3D</strong></article>
+                        <article><span>RESPONSE</span><strong>24–48 Hours</strong></article>
+                    </div>
+                    <a href="mailto:vinayvarmathogaru42@gmail.com" class="contact-link magnetic-btn">vinayvarmathogaru42@gmail.com ↗</a>
+                    <a href="tel:+916303978097" class="contact-link magnetic-btn">6303978097 ↗</a>
+                    <span class="placeholder-link">NIT Andhra Pradesh &bull; Civil Engineering</span>
+                </aside>
+                <div class="form-panel">
+                    <div class="form-header">NEW MISSION REQUEST <span id="formState">READY</span></div>
+                    <form id="contactForm">
+                        <label>YOUR NAME<input required name="name" placeholder="Enter your name"></label>
+                        <label>EMAIL ADDRESS<input required type="email" name="email" placeholder="you@example.com"></label>
+                        <label>PROJECT TYPE<select name="type">
+                            <option>Interior Design Project</option>
+                            <option>3D Visualization</option>
+                            <option>Internship / Collaboration</option>
+                            <option>General Message</option>
+                        </select></label>
+                        <label>MESSAGE<textarea required name="message" rows="5" placeholder="Tell me about the opportunity or project..."></textarea></label>
+                        <button class="btn btn-primary magnetic-btn" type="submit">
+                            <span>Launch Message</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                        </button>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">✓</div>
+                        <p class="success-label">MESSAGE PROTOCOL COMPLETE</p>
+                        <h3>Signal Received</h3>
+                        <span>Your message has been forwarded to Gmail. Hit send from there and I'll get back to you.</span>
+                        <button id="sendAgain" type="button" class="magnetic-btn">Send Another Message</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span>&copy; <span id="year"></span> THOGARU VINAY VARMA</span>
+            <span class="footer-tagline">INTERIOR DESIGN &bull; CIVIL ENGINEERING</span>
+            <a href="#home" class="magnetic-btn">BACK TO TOP ↑</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
