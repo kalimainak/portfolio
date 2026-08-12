@@ -7,55 +7,17 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="loader" id="loader">
-        <svg class="loader-web" viewBox="0 0 200 200" width="160" height="160">
-            <g class="loader-web-spin">
-                <line x1="100" y1="100" x2="100" y2="5" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
-                <line x1="100" y1="100" x2="173" y2="32" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
-                <line x1="100" y1="100" x2="195" y2="100" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
-                <line x1="100" y1="100" x2="173" y2="168" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
-                <line x1="100" y1="100" x2="100" y2="195" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
-                <line x1="100" y1="100" x2="27" y2="168" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
-                <line x1="100" y1="100" x2="5" y2="100" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
-                <line x1="100" y1="100" x2="27" y2="32" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
-                <circle cx="100" cy="100" r="20" fill="none" stroke="rgba(239,35,60,.25)" stroke-width=".5"/>
-                <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(239,35,60,.2)" stroke-width=".5"/>
-                <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(239,35,60,.15)" stroke-width=".5"/>
-                <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(239,35,60,.12)" stroke-width=".5"/>
-                <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(239,35,60,.08)" stroke-width=".5"/>
-            </g>
-            <circle cx="100" cy="100" r="4" fill="#ef233c" class="loader-center-dot"/>
-        </svg>
-        <span class="loader-text">ENTERING THE SPIDER-VERSE</span>
+        <span class="loader-text">VV</span>
         <div class="loader-bar"><div class="loader-progress"></div></div>
     </div>
 
     <div class="page-progress"><div class="progress-fill"></div></div>
-    <canvas id="rainCanvas"></canvas>
-    <canvas id="webBgCanvas"></canvas>
     <div class="grain-overlay"></div>
-    <div class="cursor-web" id="cursorWeb">
-        <svg viewBox="0 0 80 80" width="80" height="80">
-            <circle cx="40" cy="40" r="10" fill="none" stroke="rgba(239,35,60,.35)" stroke-width=".6" stroke-dasharray="2 2"/>
-            <circle cx="40" cy="40" r="18" fill="none" stroke="rgba(239,35,60,.25)" stroke-width=".5"/>
-            <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(239,35,60,.18)" stroke-width=".5" stroke-dasharray="3 3"/>
-            <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(239,35,60,.12)" stroke-width=".4"/>
-            <circle cx="40" cy="40" r="5" fill="none" stroke="rgba(239,35,60,.5)" stroke-width=".8"/>
-            <circle cx="40" cy="5" r="2" fill="rgba(239,35,60,.5)"/>
-            <circle cx="40" cy="75" r="2" fill="rgba(239,35,60,.5)"/>
-            <circle cx="5" cy="40" r="2" fill="rgba(239,35,60,.5)"/>
-            <circle cx="75" cy="40" r="2" fill="rgba(239,35,60,.5)"/>
-            <circle cx="15" cy="15" r="1.2" fill="rgba(239,35,60,.3)"/>
-            <circle cx="65" cy="15" r="1.2" fill="rgba(239,35,60,.3)"/>
-            <circle cx="15" cy="65" r="1.2" fill="rgba(239,35,60,.3)"/>
-            <circle cx="65" cy="65" r="1.2" fill="rgba(239,35,60,.3)"/>
-        </svg>
-    </div>
     <div class="cursor-dot" id="cursorDot"></div>
-    <div class="web-shoot-effect" id="webShoot"></div>
 
     <header class="topbar" id="topbar">
         <a class="brand" href="#home">VV</a>
@@ -96,14 +58,8 @@
             <div class="hero-grid-bg"></div>
             <div class="city-skyline city-back"></div>
             <div class="city-skyline city-front"></div>
-            
+
             <div class="hero-content">
-                <div class="spider-sense" id="spiderSense">
-                    <svg viewBox="0 0 100 100" class="sense-svg">
-                        <path d="M50 10 L55 45 L90 50 L55 55 L50 90 L45 55 L10 50 L45 45 Z" fill="none" stroke="#ef233c" stroke-width="1"/>
-                        <circle cx="50" cy="50" r="3" fill="#ef233c"/>
-                    </svg>
-                </div>
                 <p class="section-kicker">INTERIOR DESIGN &bull; 3D VISUALIZATION &bull; CIVIL ENGINEERING</p>
                 <h1 class="hero-title">
                     <span class="hero-first" data-text="Vinay">Vinay</span>
@@ -127,75 +83,51 @@
                     <span class="meta-item">HYDERABAD, INDIA</span>
                 </div>
             </div>
-            
+
             <div class="hero-visual">
                 <div class="abstract-geo">
-                    <div class="eng-grid-wrap" id="engGridWrap"></div>
+                    <div class="eng-grid-wrap" id="engGridWrap">
+                        <svg class="eng-grid-svg" viewBox="0 0 400 400" width="400" height="400">
+                            <g stroke="rgba(239,35,60,.2)" stroke-width="1" fill="none">
+                                <polygon points="200,30 350,100 350,300 200,370 50,300 50,100"/>
+                                <polygon points="200,60 320,115 320,285 200,340 80,285 80,115"/>
+                                <polygon points="200,90 290,130 290,270 200,310 110,270 110,130"/>
+                                <line x1="200" y1="30" x2="200" y2="370"/>
+                                <line x1="50" y1="100" x2="350" y2="300"/>
+                                <line x1="350" y1="100" x2="50" y2="300"/>
+                                <line x1="200" y1="30" x2="50" y2="300"/>
+                                <line x1="200" y1="30" x2="350" y2="300"/>
+                                <line x1="50" y1="100" x2="350" y2="100"/>
+                                <line x1="50" y1="300" x2="350" y2="300"/>
+                            </g>
+                            <g fill="rgba(239,35,60,.5)">
+                                <circle cx="200" cy="30" r="4"/>
+                                <circle cx="350" cy="100" r="4"/>
+                                <circle cx="350" cy="300" r="4"/>
+                                <circle cx="200" cy="370" r="4"/>
+                                <circle cx="50" cy="300" r="4"/>
+                                <circle cx="50" cy="100" r="4"/>
+                                <circle cx="200" cy="200" r="5"/>
+                                <circle cx="200" cy="115" r="3"/>
+                                <circle cx="200" cy="285" r="3"/>
+                                <circle cx="125" cy="200" r="3"/>
+                                <circle cx="275" cy="200" r="3"/>
+                            </g>
+                            <circle cx="200" cy="200" r="60" stroke="rgba(239,35,60,.1)" stroke-width="0.5" fill="none"/>
+                            <circle cx="200" cy="200" r="120" stroke="rgba(239,35,60,.07)" stroke-width="0.5" fill="none"/>
+                            <circle cx="200" cy="200" r="170" stroke="rgba(239,35,60,.05)" stroke-width="0.5" fill="none"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
-            
+
             <div class="scroll-cue">
                 <span>SCROLL TO EXPLORE</span>
                 <div class="scroll-line"></div>
             </div>
-            <div class="spiderman-hang" id="spidermanHang">
-                <svg class="spiderman-svg" viewBox="0 0 200 450" width="140" height="320">
-                    <!-- Web thread -->
-                    <line x1="100" y1="0" x2="100" y2="180" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
-                    <!-- Feet on web -->
-                    <ellipse cx="85" cy="175" rx="18" ry="8" fill="#e23636" transform="rotate(-15 85 175)"/>
-                    <ellipse cx="115" cy="175" rx="18" ry="8" fill="#e23636" transform="rotate(15 115 175)"/>
-                    <!-- Legs bent up -->
-                    <path d="M85 175 Q70 210 75 250" stroke="#111" stroke-width="22" fill="none" stroke-linecap="round"/>
-                    <path d="M115 175 Q130 210 125 250" stroke="#111" stroke-width="22" fill="none" stroke-linecap="round"/>
-                    <!-- Red shin guards -->
-                    <path d="M78 220 Q72 235 75 250" stroke="#e23636" stroke-width="16" fill="none" stroke-linecap="round"/>
-                    <path d="M122 220 Q128 235 125 250" stroke="#e23636" stroke-width="16" fill="none" stroke-linecap="round"/>
-                    <!-- Hips -->
-                    <ellipse cx="100" cy="255" rx="30" ry="15" fill="#111"/>
-                    <!-- Torso -->
-                    <path d="M75 255 Q70 300 75 340 L125 340 Q130 300 125 255" fill="#e23636"/>
-                    <!-- Spider pattern on torso -->
-                    <line x1="100" y1="260" x2="100" y2="335" stroke="#111" stroke-width="1.5" opacity=".4"/>
-                    <line x1="80" y1="280" x2="100" y2="290" stroke="#111" stroke-width="1" opacity=".3"/>
-                    <line x1="120" y1="280" x2="100" y2="290" stroke="#111" stroke-width="1" opacity=".3"/>
-                    <line x1="78" y1="300" x2="100" y2="305" stroke="#111" stroke-width="1" opacity=".3"/>
-                    <line x1="122" y1="300" x2="100" y2="305" stroke="#111" stroke-width="1" opacity=".3"/>
-                    <!-- Spider emblem -->
-                    <circle cx="100" cy="295" r="5" fill="#111"/>
-                    <!-- Arms reaching down -->
-                    <path d="M78 270 Q55 310 50 355" stroke="#111" stroke-width="18" fill="none" stroke-linecap="round"/>
-                    <path d="M122 270 Q145 310 150 355" stroke="#111" stroke-width="18" fill="none" stroke-linecap="round"/>
-                    <!-- Red gloves -->
-                    <path d="M57 335 Q50 350 48 365" stroke="#e23636" stroke-width="14" fill="none" stroke-linecap="round"/>
-                    <path d="M143 335 Q150 350 152 365" stroke="#e23636" stroke-width="14" fill="none" stroke-linecap="round"/>
-                    <!-- Head (upside down) -->
-                    <ellipse cx="100" cy="370" rx="32" ry="38" fill="#e23636"/>
-                    <!-- Mask pattern -->
-                    <path d="M100 338 Q100 350 100 360" stroke="#111" stroke-width="1" opacity=".3"/>
-                    <path d="M75 355 Q100 365 125 355" stroke="#111" stroke-width="1" opacity=".3"/>
-                    <path d="M72 370 Q100 385 128 370" stroke="#111" stroke-width="1" opacity=".3"/>
-                    <!-- Eyes -->
-                    <ellipse cx="86" cy="365" rx="14" ry="10" fill="#fff" stroke="#111" stroke-width="2.5" transform="rotate(-5 86 365)"/>
-                    <ellipse cx="114" cy="365" rx="14" ry="10" fill="#fff" stroke="#111" stroke-width="2.5" transform="rotate(5 114 365)"/>
-                    <!-- Eye highlights -->
-                    <ellipse cx="83" cy="363" rx="4" ry="3" fill="rgba(255,255,255,.6)"/>
-                    <ellipse cx="111" cy="363" rx="4" ry="3" fill="rgba(255,255,255,.6)"/>
-                    <!-- Hands together pose -->
-                    <ellipse cx="100" cy="400" rx="20" ry="12" fill="#e23636"/>
-                    <ellipse cx="100" cy="400" rx="16" ry="8" fill="#1a1a1a" opacity=".2"/>
-                </svg>
-            </div>
         </section>
 
         <section id="about" class="section light">
-            <div class="section-bg-web about-web"></div>
-            <div class="web-corner corner-tl"></div>
-            <div class="web-corner corner-br"></div>
-            <div class="floating-spider spider-1"><svg viewBox="0 0 60 60" width="45"><circle cx="30" cy="25" r="10" fill="#111"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1.2"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1.2"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1.2"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1.2"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1.2"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1.2"/></svg></div>
-            <div class="floating-spider spider-2"><svg viewBox="0 0 60 60" width="32"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".45"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".45"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1.2" opacity=".45"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1.2" opacity=".45"/></svg></div>
-            <div class="floating-spider spider-2b"><svg viewBox="0 0 60 60" width="24"><circle cx="30" cy="25" r="10" fill="#111" opacity=".35"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".35"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".35"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".35"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".35"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".35"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".35"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".35"/></svg></div>
-            <div class="section-web-line"></div>
             <div class="section-label">01 / ABOUT ME</div>
             <div class="split-layout">
                 <div class="split-left">
@@ -235,11 +167,6 @@
         </section>
 
         <section id="skills" class="section dark">
-            <div class="section-bg-web skills-web"></div>
-            <div class="web-corner corner-tl"></div>
-            <div class="web-corner corner-br"></div>
-            <div class="floating-spider spider-3"><svg viewBox="0 0 60 60" width="38"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".5"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".5"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1.2" opacity=".5"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1.2" opacity=".5"/></svg></div>
-            <div class="floating-spider spider-3b"><svg viewBox="0 0 60 60" width="26"><circle cx="30" cy="25" r="10" fill="#111" opacity=".4"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".4"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".4"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".4"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".4"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".4"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".4"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".4"/></svg></div>
             <div class="section-label">02 / DESIGN SKILLS</div>
             <div class="section-head">
                 <div>
@@ -310,11 +237,6 @@
         </section>
 
         <section id="projects" class="section projects-section">
-            <div class="section-bg-web projects-web"></div>
-            <div class="web-corner corner-tl"></div>
-            <div class="web-corner corner-br"></div>
-            <div class="floating-spider spider-4"><svg viewBox="0 0 60 60" width="40"><circle cx="30" cy="25" r="10" fill="#111" opacity=".2"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".2"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".2"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".2"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".2"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".2"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".2"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".2"/></svg></div>
-            <div class="floating-spider spider-4b"><svg viewBox="0 0 60 60" width="28"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".25"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".25"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1" opacity=".25"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1" opacity=".25"/></svg></div>
             <div class="section-label">03 / SELECTED WORK</div>
             <div class="section-head">
                 <div>
@@ -331,7 +253,6 @@
                         <h3>Modern Kitchen</h3>
                         <p>Sleek black cabinets with wood accents</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
                 <figure class="work-card" data-tilt>
                     <img src="WhatsApp Image 2026-08-11 at 23.27.27 (1).jpeg" alt="Contemporary Bedroom" loading="lazy">
@@ -340,7 +261,6 @@
                         <h3>Contemporary Bedroom</h3>
                         <p>Blue accent wall with pendant lights</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
                 <figure class="work-card" data-tilt>
                     <img src="WhatsApp Image 2026-08-11 at 23.27.26.jpeg" alt="Warm Bedroom Interior" loading="lazy">
@@ -349,7 +269,6 @@
                         <h3>Warm Bedroom Interior</h3>
                         <p>Ambient lighting with neutral tones</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
                 <figure class="work-card" data-tilt>
                     <img src="WhatsApp Image 2026-08-11 at 23.27.28 (2).jpeg" alt="Living & Dining" loading="lazy">
@@ -358,7 +277,6 @@
                         <h3>Living & Dining</h3>
                         <p>Open plan with marble flooring</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
                 <figure class="work-card" data-tilt>
                     <img src="WhatsApp Image 2026-08-11 at 23.27.28 (1).jpeg" alt="Modern Living Room" loading="lazy">
@@ -367,7 +285,6 @@
                         <h3>Modern Living Room</h3>
                         <p>Cozy space with cove lighting</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
                 <figure class="work-card" data-tilt>
                     <img src="WhatsApp Image 2026-08-11 at 23.27.27.jpeg" alt="Bedroom Design" loading="lazy">
@@ -376,7 +293,6 @@
                         <h3>Bedroom Concept</h3>
                         <p>Artistic wine-themed decor</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
                 <figure class="work-card" data-tilt>
                     <img src="WhatsApp Image 2026-08-11 at 23.27.25.jpeg" alt="Front Elevation" loading="lazy">
@@ -385,7 +301,6 @@
                         <h3>Front Elevation</h3>
                         <p>Modern facade with tree motif</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
                 <figure class="work-card" data-tilt>
                     <img src="WhatsApp Image 2026-08-11 at 23.27.26 (1).jpeg" alt="Bathroom Elevations" loading="lazy">
@@ -394,7 +309,6 @@
                         <h3>Bathroom Detailing</h3>
                         <p>Complete elevation drawings</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
                 <figure class="work-card" data-tilt>
                     <img src="WhatsApp Image 2026-08-11 at 23.27.26_1.jpeg" alt="Bedroom Plan" loading="lazy">
@@ -403,7 +317,6 @@
                         <h3>Bedroom Layout</h3>
                         <p>14'-0" x 17'-6" floor plan</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
                 <figure class="work-card" data-tilt>
                     <img src="WhatsApp Image 2026-08-11 at 23.27.28.jpeg" alt="Floor Plan" loading="lazy">
@@ -412,21 +325,11 @@
                         <h3>Floor Plan</h3>
                         <p>30' x 45' residential layout</p>
                     </div>
-                    <div class="card-web-effect"></div>
                 </figure>
             </div>
         </section>
 
-        <div class="section-transition transition-light-to-dark">
-            <svg viewBox="0 0 100 20" preserveAspectRatio="none" width="100%" height="40"><path d="M0,20 L50,0 L100,20" fill="#07070b" opacity=".5"/><line x1="0" y1="10" x2="100" y2="10" stroke="#ef233c" stroke-width=".5" opacity=".3"/></svg>
-        </div>
-
         <section id="experience" class="section dark experience-section">
-            <div class="section-bg-web experience-web"></div>
-            <div class="web-corner corner-tl"></div>
-            <div class="web-corner corner-br"></div>
-            <div class="floating-spider spider-5"><svg viewBox="0 0 60 60" width="36"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".35"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".35"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1" opacity=".35"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1" opacity=".35"/></svg></div>
-            <div class="floating-spider spider-5b"><svg viewBox="0 0 60 60" width="22"><circle cx="30" cy="25" r="10" fill="#111" opacity=".25"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".25"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".25"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".25"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".25"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".25"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".25"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".25"/></svg></div>
             <div class="section-label">04 / EDUCATION & KNOWLEDGE</div>
             <div class="section-head">
                 <div>
@@ -458,16 +361,7 @@
             </div>
         </section>
 
-        <div class="section-transition transition-dark-to-light">
-            <svg viewBox="0 0 100 20" preserveAspectRatio="none" width="100%" height="40"><path d="M0,20 L50,0 L100,20" fill="#eee9df" opacity=".5"/><line x1="0" y1="10" x2="100" y2="10" stroke="#ef233c" stroke-width=".5" opacity=".3"/></svg>
-        </div>
-
         <section id="contact" class="section contact-section">
-            <div class="section-bg-web contact-web"></div>
-            <div class="web-corner corner-tl"></div>
-            <div class="web-corner corner-br"></div>
-            <div class="floating-spider spider-6"><svg viewBox="0 0 60 60" width="34"><circle cx="30" cy="25" r="10" fill="#111" opacity=".3"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#111" opacity=".3"/><line x1="20" y1="25" x2="5" y2="15" stroke="#111" stroke-width="1" opacity=".3"/><line x1="40" y1="25" x2="55" y2="15" stroke="#111" stroke-width="1" opacity=".3"/><line x1="18" y1="30" x2="3" y2="30" stroke="#111" stroke-width="1" opacity=".3"/><line x1="42" y1="30" x2="57" y2="30" stroke="#111" stroke-width="1" opacity=".3"/><line x1="20" y1="35" x2="5" y2="45" stroke="#111" stroke-width="1" opacity=".3"/><line x1="40" y1="35" x2="55" y2="45" stroke="#111" stroke-width="1" opacity=".3"/></svg></div>
-            <div class="floating-spider spider-6b"><svg viewBox="0 0 60 60" width="20"><circle cx="30" cy="25" r="10" fill="#ef233c" opacity=".3"/><ellipse cx="30" cy="38" rx="8" ry="12" fill="#ef233c" opacity=".3"/><line x1="20" y1="25" x2="5" y2="15" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="40" y1="25" x2="55" y2="15" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="18" y1="30" x2="3" y2="30" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="42" y1="30" x2="57" y2="30" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="20" y1="35" x2="5" y2="45" stroke="#ef233c" stroke-width="1" opacity=".3"/><line x1="40" y1="35" x2="55" y2="45" stroke="#ef233c" stroke-width="1" opacity=".3"/></svg></div>
             <div class="section-label">05 / CONTACT</div>
             <div class="section-head">
                 <div>
@@ -487,8 +381,8 @@
                         <article><span>FOCUS</span><strong>Interiors / CAD / 3D</strong></article>
                         <article><span>RESPONSE</span><strong>24–48 Hours</strong></article>
                     </div>
-                    <a href="mailto:vinayvarmathogaru42@gmail.com" class="contact-link magnetic-btn">vinayvarmathogaru42@gmail.com ↗</a>
-                    <a href="tel:+916303978097" class="contact-link magnetic-btn">6303978097 ↗</a>
+                    <a href="mailto:vinayvarmathogaru42@gmail.com" class="contact-link">vinayvarmathogaru42@gmail.com ↗</a>
+                    <a href="tel:+916303978097" class="contact-link">6303978097 ↗</a>
                     <span class="placeholder-link">NIT Andhra Pradesh &bull; Civil Engineering</span>
                 </aside>
                 <div class="form-panel">
@@ -513,7 +407,7 @@
                         <p class="success-label">MESSAGE PROTOCOL COMPLETE</p>
                         <h3>Signal Received</h3>
                         <span>Your message has been forwarded to Gmail. Hit send from there and I'll get back to you.</span>
-                        <button id="sendAgain" type="button" class="magnetic-btn">Send Another Message</button>
+                        <button id="sendAgain" type="button">Send Another Message</button>
                     </div>
                 </div>
             </div>
@@ -524,7 +418,7 @@
         <div class="footer-content">
             <span>&copy; <span id="year"></span> THOGARU VINAY VARMA</span>
             <span class="footer-tagline">INTERIOR DESIGN &bull; CIVIL ENGINEERING</span>
-            <a href="#home" class="magnetic-btn">BACK TO TOP ↑</a>
+            <a href="#home" class="btn btn-ghost magnetic-btn">BACK TO TOP ↑</a>
         </div>
     </footer>
 

@@ -10,15 +10,15 @@ function buildEngGrid() {
     const wrap = document.getElementById('engGridWrap');
     if (!wrap) return;
     const s = (x1,y1,x2,y2,sw,o) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(255,255,255,${o})" stroke-width="${sw}"/>`;
-    const sr = (x1,y1,x2,y2,sw,o) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(239,35,60,${o})" stroke-width="${sw}"/>`;
+    const sr = (x1,y1,x2,y2,sw,o) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(200,164,92,${o})" stroke-width="${sw}"/>`;
     const c = (cx,cy,r,fill,o) => `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" opacity="${o}"/>`;
-    const nc = (cx,cy,r,sw,o) => `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(239,35,60,${o})" stroke-width="${sw}"/>`;
-    const n4 = (pts,sw,o,d) => `<polygon points="${pts}" fill="none" stroke="rgba(239,35,60,${o})" stroke-width="${sw}"${d?' stroke-dasharray="'+d+'"':''}/>`;
+    const nc = (cx,cy,r,sw,o) => `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(200,164,92,${o})" stroke-width="${sw}"/>`;
+    const n4 = (pts,sw,o,d) => `<polygon points="${pts}" fill="none" stroke="rgba(200,164,92,${o})" stroke-width="${sw}"${d?' stroke-dasharray="'+d+'"':''}/>`;
     const rect = (x,y,w,h,sw,o,t) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="rgba(255,255,255,${o})" stroke-width="${sw}"${t?' transform="'+t+'"':''}/>`;
 
     let svg = `<svg class="eng-grid-svg" viewBox="0 0 400 400" width="400" height="400">
         <defs><radialGradient id="gFade" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="rgba(239,35,60,.06)"/>
+        <stop offset="0%" stop-color="rgba(200,164,92,.06)"/>
         <stop offset="100%" stop-color="transparent"/></radialGradient></defs>
         <circle cx="200" cy="200" r="195" fill="url(#gFade)"/>`;
 
@@ -40,12 +40,12 @@ function buildEngGrid() {
     svg += n4('200,100 265,135 300,200 265,265 200,300 135,265 100,200 135,135',.5,.11,'5 3');
 
     const tips = [[200,55],[295,82],[345,200],[295,318],[200,345],[105,318],[55,200],[105,82]];
-    tips.forEach(([x,y]) => svg += c(x,y,3.5,'#ef233c',.65));
+    tips.forEach(([x,y]) => svg += c(x,y,3.5,'#c8a45c',.65));
 
     const inner = [[100,100],[300,100],[300,300],[100,300]];
     inner.forEach(([x,y]) => svg += c(x,y,2.5,'rgba(255,255,255,.3)',1));
 
-    svg += c(200,200,5,'#ef233c',1);
+    svg += c(200,200,5,'#c8a45c',1);
     svg += nc(200,200,14,.8,.4);
 
     svg += '</svg>';
@@ -73,48 +73,22 @@ function initHeroReveal() {
 }
 
 const cursorDot = document.getElementById('cursorDot');
-const cursorWeb = document.getElementById('cursorWeb');
-let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0, webX = 0, webY = 0;
-document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; cursorDot.style.opacity = '1'; cursorWeb.style.opacity = '1'; });
-document.addEventListener('mouseleave', () => { cursorDot.style.opacity = '0'; cursorWeb.style.opacity = '0'; });
+let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
+document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; cursorDot.style.opacity = '1'; });
+document.addEventListener('mouseleave', () => { cursorDot.style.opacity = '0'; });
 function animateCursor() {
-    dotX += (mouseX - dotX) * 0.15; dotY += (mouseY - dotY) * 0.15;
-    webX += (mouseX - webX) * 0.08; webY += (mouseY - webY) * 0.08;
-    cursorDot.style.left = dotX + 'px'; cursorDot.style.top = dotY + 'px';
-    cursorWeb.style.left = webX + 'px'; cursorWeb.style.top = webY + 'px';
+    dotX += (mouseX - dotX) * 0.15;
+    dotY += (mouseY - dotY) * 0.15;
+    cursorDot.style.left = dotX + 'px';
+    cursorDot.style.top = dotY + 'px';
     requestAnimationFrame(animateCursor);
 }
 animateCursor();
 
 document.querySelectorAll('a, button, .work-card, .skill-item, .panel, .metric, .magnetic-btn').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursorDot.classList.add('hover'); cursorWeb.classList.add('hover'); });
-    el.addEventListener('mouseleave', () => { cursorDot.classList.remove('hover'); cursorWeb.classList.remove('hover'); });
+    el.addEventListener('mouseenter', () => { cursorDot.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => { cursorDot.classList.remove('hover'); });
 });
-
-document.addEventListener('click', (e) => {
-    for (let i = 0; i < 10; i++) {
-        const p = document.createElement('div');
-        p.style.cssText = 'position:fixed;left:'+e.clientX+'px;top:'+e.clientY+'px;width:4px;height:4px;background:#ef233c;border-radius:50%;pointer-events:none;z-index:1997;box-shadow:0 0 10px #ef233c';
-        document.body.appendChild(p);
-        const a = (i / 10) * Math.PI * 2, v = 60 + Math.random() * 50;
-        gsap.to(p, { x: Math.cos(a) * v, y: Math.sin(a) * v, opacity: 0, scale: 0, duration: .7, ease: 'power3.out', onComplete: () => p.remove() });
-    }
-});
-
-const rainCanvas = document.getElementById('rainCanvas');
-const rCtx = rainCanvas.getContext('2d');
-let drops = [];
-function resizeRain() { rainCanvas.width = window.innerWidth; rainCanvas.height = window.innerHeight; }
-resizeRain(); window.addEventListener('resize', resizeRain);
-function createDrop() { return { x: Math.random() * rainCanvas.width, y: Math.random() * -rainCanvas.height, length: Math.random() * 25 + 10, speed: Math.random() * 5 + 3, opacity: Math.random() * .3 + .1 }; }
-function initDrops() { drops = []; for (let i = 0; i < Math.min(120, Math.floor(rainCanvas.width / 12)); i++) drops.push(createDrop()); }
-initDrops();
-function drawRain() {
-    rCtx.clearRect(0, 0, rainCanvas.width, rainCanvas.height);
-    drops.forEach(d => { rCtx.beginPath(); rCtx.moveTo(d.x, d.y); rCtx.lineTo(d.x + .5, d.y + d.length); rCtx.strokeStyle = 'rgba(174,194,224,' + d.opacity + ')'; rCtx.lineWidth = 1; rCtx.stroke(); d.y += d.speed; if (d.y > rainCanvas.height) { Object.assign(d, createDrop()); d.y = Math.random() * -100; } });
-    requestAnimationFrame(drawRain);
-}
-drawRain();
 
 const heroCanvas = document.getElementById('heroCanvas');
 const hCtx = heroCanvas.getContext('2d');
@@ -129,7 +103,7 @@ class HeroNode {
         this.vx += (this.baseX - this.x) * .02; this.vy += (this.baseY - this.y) * .02;
         this.vx *= .92; this.vy *= .92; this.x += this.vx; this.y += this.vy;
     }
-    draw() { hCtx.beginPath(); hCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2); hCtx.fillStyle = 'rgba(239,35,60,.5)'; hCtx.fill(); }
+    draw() { hCtx.beginPath(); hCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2); hCtx.fillStyle = 'rgba(200,164,92,.5)'; hCtx.fill(); }
 }
 function initHeroNodes() { heroNodes = []; for (let i = 0; i < Math.min(150, Math.floor((heroCanvas.width * heroCanvas.height) / 6000)); i++) heroNodes.push(new HeroNode()); }
 initHeroNodes();
@@ -138,36 +112,13 @@ function drawHeroWeb() {
     heroNodes.forEach(n => { n.update(); n.draw(); });
     for (let i = 0; i < heroNodes.length; i++) for (let j = i + 1; j < heroNodes.length; j++) {
         const dx = heroNodes[i].x - heroNodes[j].x, dy = heroNodes[i].y - heroNodes[j].y, dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 100) { hCtx.beginPath(); hCtx.strokeStyle = 'rgba(239,35,60,' + ((1 - dist / 100) * .3) + ')'; hCtx.lineWidth = .5; hCtx.moveTo(heroNodes[i].x, heroNodes[i].y); hCtx.lineTo(heroNodes[j].x, heroNodes[j].y); hCtx.stroke(); }
+        if (dist < 100) { hCtx.beginPath(); hCtx.strokeStyle = 'rgba(200,164,92,' + ((1 - dist / 100) * .3) + ')'; hCtx.lineWidth = .5; hCtx.moveTo(heroNodes[i].x, heroNodes[i].y); hCtx.lineTo(heroNodes[j].x, heroNodes[j].y); hCtx.stroke(); }
     }
     requestAnimationFrame(drawHeroWeb);
 }
 drawHeroWeb();
 heroCanvas.addEventListener('mousemove', (e) => { const r = heroCanvas.getBoundingClientRect(); heroMouseX = e.clientX - r.left; heroMouseY = e.clientY - r.top; });
 heroCanvas.addEventListener('mouseleave', () => { heroMouseX = -1000; heroMouseY = -1000; });
-
-const webBgCanvas = document.getElementById('webBgCanvas');
-const wCtx = webBgCanvas.getContext('2d');
-let bgNodes = [];
-function resizeWebBg() { webBgCanvas.width = window.innerWidth; webBgCanvas.height = window.innerHeight; }
-resizeWebBg(); window.addEventListener('resize', () => { resizeWebBg(); initBgNodes(); });
-class BgNode {
-    constructor() { this.x = Math.random() * webBgCanvas.width; this.y = Math.random() * webBgCanvas.height; this.vx = (Math.random() - .5) * .5; this.vy = (Math.random() - .5) * .5; this.size = Math.random() * 1.5 + .5; }
-    update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > webBgCanvas.width) this.vx *= -1; if (this.y < 0 || this.y > webBgCanvas.height) this.vy *= -1; }
-    draw() { wCtx.beginPath(); wCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2); wCtx.fillStyle = 'rgba(239,35,60,.35)'; wCtx.fill(); }
-}
-function initBgNodes() { bgNodes = []; for (let i = 0; i < Math.min(50, Math.floor((webBgCanvas.width * webBgCanvas.height) / 25000)); i++) bgNodes.push(new BgNode()); }
-initBgNodes();
-function drawBgWeb() {
-    wCtx.clearRect(0, 0, webBgCanvas.width, webBgCanvas.height);
-    bgNodes.forEach(n => { n.update(); n.draw(); });
-    for (let i = 0; i < bgNodes.length; i++) for (let j = i + 1; j < bgNodes.length; j++) {
-        const dx = bgNodes[i].x - bgNodes[j].x, dy = bgNodes[i].y - bgNodes[j].y, dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 150) { wCtx.beginPath(); wCtx.strokeStyle = 'rgba(239,35,60,' + ((1 - dist / 150) * .12) + ')'; wCtx.lineWidth = .3; wCtx.moveTo(bgNodes[i].x, bgNodes[i].y); wCtx.lineTo(bgNodes[j].x, bgNodes[j].y); wCtx.stroke(); }
-    }
-    requestAnimationFrame(drawBgWeb);
-}
-drawBgWeb();
 
 const progressFill = document.querySelector('.progress-fill');
 const topbar = document.getElementById('topbar');
@@ -274,13 +225,13 @@ const nLinks = document.querySelectorAll('.desktop-nav a');
 window.addEventListener('scroll', () => {
     let c = '';
     secs.forEach(s => { if (scrollY >= s.offsetTop - 200) c = s.getAttribute('id'); });
-    nLinks.forEach(l => { l.style.color = l.getAttribute('href') === '#' + c ? '#ef233c' : ''; });
+    nLinks.forEach(l => { l.style.color = l.getAttribute('href') === '#' + c ? '#c8a45c' : ''; });
 });
 
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 const formState = document.getElementById('formState');
-document.getElementById('sendAgain').addEventListener('click', () => { contactForm.reset(); contactForm.style.display = 'grid'; formSuccess.classList.remove('show'); formState.textContent = 'READY'; formState.style.color = '#ef233c'; });
+document.getElementById('sendAgain').addEventListener('click', () => { contactForm.reset(); contactForm.style.display = 'grid'; formSuccess.classList.remove('show'); formState.textContent = 'READY'; formState.style.color = '#c8a45c'; });
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = contactForm.querySelector('[name="name"]').value.trim();
@@ -326,50 +277,3 @@ document.querySelectorAll('[data-tilt]').forEach(el => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
-
-// Spider-Man hanging drop on scroll
-const spiderman = document.getElementById('spidermanHang');
-if (spiderman) {
-    gsap.set(spiderman, { y: -450, opacity: 0 });
-    ScrollTrigger.create({
-        trigger: '#home',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-        onUpdate: (self) => {
-            const p = self.progress;
-            gsap.set(spiderman, {
-                y: -450 + (450 * p),
-                opacity: Math.min(p * 3, 1)
-            });
-        }
-    });
-}
-
-// Spider drop on scroll - smooth even on rough scroll
-gsap.utils.toArray('.floating-spider').forEach((spider, i) => {
-    const startY = -180 - (i * 30);
-    const endY = 0;
-    gsap.set(spider, { y: startY, opacity: 0 });
-
-    const webLine = document.createElement('div');
-    webLine.style.cssText = 'position:absolute;top:-200px;left:50%;width:1px;height:200px;background:linear-gradient(180deg,transparent,rgba(17,17,17,.12) 50%,rgba(17,17,17,.05));transform:translateX(-50%);pointer-events:none;z-index:0;transform-origin:top';
-    spider.appendChild(webLine);
-    gsap.set(webLine, { scaleY: 0, transformOrigin: 'top' });
-
-    ScrollTrigger.create({
-        trigger: spider.closest('.section'),
-        start: 'top 130%',
-        end: 'top -30%',
-        scrub: 1.5,
-        onUpdate: (self) => {
-            const p = self.progress;
-            gsap.set(spider, {
-                y: startY + (endY - startY) * p,
-                opacity: Math.min(p * 2.5, .7),
-                ease: 'power2.out'
-            });
-            gsap.set(webLine, { scaleY: p });
-        }
-    });
-});
