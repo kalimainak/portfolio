@@ -25,23 +25,23 @@ function initHeroReveal() {
     });
 }
 
-const cursorGlow = document.getElementById('cursorGlow');
-const cursorRing = document.getElementById('cursorRing');
-let mouseX = 0, mouseY = 0, glowX = 0, glowY = 0, ringX = 0, ringY = 0;
-document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; cursorGlow.style.opacity = '1'; cursorRing.style.opacity = '1'; });
-document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; cursorRing.style.opacity = '0'; });
+const cursorDot = document.getElementById('cursorDot');
+const cursorWeb = document.getElementById('cursorWeb');
+let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0, webX = 0, webY = 0;
+document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; cursorDot.style.opacity = '1'; cursorWeb.style.opacity = '1'; });
+document.addEventListener('mouseleave', () => { cursorDot.style.opacity = '0'; cursorWeb.style.opacity = '0'; });
 function animateCursor() {
-    glowX += (mouseX - glowX) * 0.2; glowY += (mouseY - glowY) * 0.2;
-    ringX += (mouseX - ringX) * 0.1; ringY += (mouseY - ringY) * 0.1;
-    cursorGlow.style.left = glowX + 'px'; cursorGlow.style.top = glowY + 'px';
-    cursorRing.style.left = ringX + 'px'; cursorRing.style.top = ringY + 'px';
+    dotX += (mouseX - dotX) * 0.15; dotY += (mouseY - dotY) * 0.15;
+    webX += (mouseX - webX) * 0.08; webY += (mouseY - webY) * 0.08;
+    cursorDot.style.left = dotX + 'px'; cursorDot.style.top = dotY + 'px';
+    cursorWeb.style.left = webX + 'px'; cursorWeb.style.top = webY + 'px';
     requestAnimationFrame(animateCursor);
 }
 animateCursor();
 
 document.querySelectorAll('a, button, .work-card, .skill-item, .panel, .metric, .magnetic-btn, .geo-core').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursorGlow.classList.add('hover'); cursorRing.classList.add('hover'); });
-    el.addEventListener('mouseleave', () => { cursorGlow.classList.remove('hover'); cursorRing.classList.remove('hover'); });
+    el.addEventListener('mouseenter', () => { cursorDot.classList.add('hover'); cursorWeb.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => { cursorDot.classList.remove('hover'); cursorWeb.classList.remove('hover'); });
 });
 
 document.addEventListener('click', (e) => {

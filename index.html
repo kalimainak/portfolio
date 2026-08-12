@@ -11,10 +11,24 @@
 </head>
 <body>
     <div class="loader" id="loader">
-        <div class="loader-mask">
-            <div class="loader-eye left"></div>
-            <div class="loader-eye right"></div>
-        </div>
+        <svg class="loader-web" viewBox="0 0 200 200" width="160" height="160">
+            <g class="loader-web-spin">
+                <line x1="100" y1="100" x2="100" y2="5" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
+                <line x1="100" y1="100" x2="173" y2="32" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
+                <line x1="100" y1="100" x2="195" y2="100" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
+                <line x1="100" y1="100" x2="173" y2="168" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
+                <line x1="100" y1="100" x2="100" y2="195" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
+                <line x1="100" y1="100" x2="27" y2="168" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
+                <line x1="100" y1="100" x2="5" y2="100" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
+                <line x1="100" y1="100" x2="27" y2="32" stroke="rgba(239,35,60,.3)" stroke-width=".5"/>
+                <circle cx="100" cy="100" r="20" fill="none" stroke="rgba(239,35,60,.25)" stroke-width=".5"/>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(239,35,60,.2)" stroke-width=".5"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(239,35,60,.15)" stroke-width=".5"/>
+                <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(239,35,60,.12)" stroke-width=".5"/>
+                <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(239,35,60,.08)" stroke-width=".5"/>
+            </g>
+            <circle cx="100" cy="100" r="4" fill="#ef233c" class="loader-center-dot"/>
+        </svg>
         <span class="loader-text">ENTERING THE SPIDER-VERSE</span>
         <div class="loader-bar"><div class="loader-progress"></div></div>
     </div>
@@ -23,8 +37,24 @@
     <canvas id="rainCanvas"></canvas>
     <canvas id="webBgCanvas"></canvas>
     <div class="grain-overlay"></div>
-    <div class="cursor-glow" id="cursorGlow"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor-web" id="cursorWeb">
+        <svg viewBox="0 0 60 60" width="60" height="60">
+            <line x1="30" y1="30" x2="30" y2="2" stroke="rgba(239,35,60,.5)" stroke-width=".4"/>
+            <line x1="30" y1="30" x2="50" y2="8" stroke="rgba(239,35,60,.5)" stroke-width=".4"/>
+            <line x1="30" y1="30" x2="58" y2="30" stroke="rgba(239,35,60,.5)" stroke-width=".4"/>
+            <line x1="30" y1="30" x2="50" y2="52" stroke="rgba(239,35,60,.5)" stroke-width=".4"/>
+            <line x1="30" y1="30" x2="30" y2="58" stroke="rgba(239,35,60,.5)" stroke-width=".4"/>
+            <line x1="30" y1="30" x2="10" y2="52" stroke="rgba(239,35,60,.5)" stroke-width=".4"/>
+            <line x1="30" y1="30" x2="2" y2="30" stroke="rgba(239,35,60,.5)" stroke-width=".4"/>
+            <line x1="30" y1="30" x2="10" y2="8" stroke="rgba(239,35,60,.5)" stroke-width=".4"/>
+            <circle cx="30" cy="30" r="8" fill="none" stroke="rgba(239,35,60,.4)" stroke-width=".4"/>
+            <circle cx="30" cy="30" r="16" fill="none" stroke="rgba(239,35,60,.3)" stroke-width=".4"/>
+            <circle cx="30" cy="30" r="24" fill="none" stroke="rgba(239,35,60,.2)" stroke-width=".4"/>
+            <circle cx="30" cy="30" r="28" fill="none" stroke="rgba(239,35,60,.15)" stroke-width=".4"/>
+            <circle cx="30" cy="30" r="2.5" fill="#ef233c"/>
+        </svg>
+    </div>
+    <div class="cursor-dot" id="cursorDot"></div>
     <div class="web-shoot-effect" id="webShoot"></div>
 
     <header class="topbar" id="topbar">
